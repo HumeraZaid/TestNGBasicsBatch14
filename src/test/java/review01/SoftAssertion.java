@@ -1,4 +1,4 @@
-package class02;
+package review01;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -12,7 +12,7 @@ import org.testng.asserts.SoftAssert;
 
 import java.util.concurrent.TimeUnit;
 
-public class SoftAssertions {
+public class SoftAssertion {
 
     WebDriver driver;
     @BeforeMethod(alwaysRun = true)
@@ -49,16 +49,18 @@ public class SoftAssertions {
         soft.assertEquals(ActualErrorMsg,ExpectedErrorMsg);
 
         // Print
-        System.out.println("I am here after first assertion");
+        System.out.println("I am here after the first assertion");
 
         // Check if the error message web element is displayed
         boolean isDisplayed = errorMSG.isDisplayed();
 
         // Assertion
         soft.assertTrue(isDisplayed);
+        System.out.println("After all the assertions, I am sending this message");
 
         // Assert all the assertions that have been made
-        soft.assertAll();
+        soft.assertAll(); // This should be the last statement of your test case, nothing should be executed after this
+
     }
 
 
